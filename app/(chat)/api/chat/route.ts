@@ -1,3 +1,6 @@
+import fs from 'fs';
+import path from 'path';
+
 import { convertToCoreMessages, Message, streamText } from 'ai';
 import { z } from 'zod';
 
@@ -16,6 +19,10 @@ export async function POST(request: Request) {
 
   const session = await auth();
 
+  const systemPromptsPath = path.join(process.cwd(), 'prompt/systemprompt.txt');
+  const systemPrompt = fs.readFileSync(systemPromptsPath, 'utf-8');
+  console.log("systemPrompt", systemPrompt);
+
   if (!session) {
     return new Response('Unauthorized', { status: 401 });
   }
@@ -28,8 +35,7 @@ export async function POST(request: Request) {
 
   const result = await streamText({
     model: customModel(model),
-    system:
-      'you are a friendly assistant! keep your responses concise and helpful.',
+    system: systemPrompt,
     messages: coreMessages,
     maxSteps: 5,
     tools: {

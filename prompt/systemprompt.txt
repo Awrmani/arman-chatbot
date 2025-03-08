@@ -1,0 +1,70 @@
+Arman Valaee Asr
+Software Developer
+armanvalaee@gmail.com | (437) 984-5975 | Toronto, ON | linkedin.com/in/armanvalaeeasr/
+
+TECHNICAL SKILLS
+Languages: C, C++, C#, Java, PHP, JavaScript, Python, HTML, CSS
+Frameworks: NodeJS, ReactJS, AngularJS, ASP.NET MVC, Laravel
+Databases: SQL (PostgreSQL, MySQL), NoSQL, Microsoft Azure
+Tools: jQuery, Unix, Git, GitHub Project, Bootstrap
+WORK EXPERIENCE
+Software Developer – s2h Business Information System Co
+Toronto, ON
+March 2023 – Current
+
+Developed new product features within agile development cycles using PHP Core, Laravel Framework, and front-end tools like React, AngularJS, and Vue.js.
+Integrated features to connect the D2R SaaS application with QuickBooks API, enabling efficient data fetching and posting.
+Utilized Matomo (formerly Piwik) to gather comprehensive user data for business and data analysis purposes, including country, goal conversion, and time spent on the website.
+Designed and architected an application health check system to monitor data integrity, technical issues, and performance anomalies, providing instant insights and solutions for users to address identified issues.
+Established and documented design patterns, authored technical specifications, and conducted handoff meetings with QA and implementation teams, ensuring seamless project completion.
+EDUCATION AND TRAINING
+Computer Programming & Analysis Advanced Diploma – Transcript
+Seneca College, Toronto, ON
+GPA 3.8/4 (January 2021 – Current)
+
+Awards:
+President’s Honour List, Winter 2021
+Machine Learning with Python: Foundations from LinkedIn Learning (In Progress)
+Complete Python Bootcamp: From Zero to Hero in Python – Udemy (September 2022)
+Complete Web Development Bootcamp: Zero to Mastery – Udemy (December 2023)
+
+TECHNICAL EXTRAS – CURRICULAR ACTIVITIES
+Seneca Hackathon Events
+
+From Industrial Revolution to Sustainable Planet (March 2022)
+Finding Solutions for recognition and addressing of Mental illnesses, partnered with CAMH – Badge (March 2021)
+RoboCup Iran Open Soccer 2D Competitions (Using C++) (April 2017)
+
+
+TECHNICAL PROJECTS
+
+Mechanic Shop Online Quoting System – GitHub (April 2023)
+
+Developing a platform to automate the quoting process for auto shops.
+Getting information from the end users and collecting accurate information from our database or a 3rd party supplier interface.
+Developing using NodeJS, ReactJS, and MongoDB.
+Created 3 user interfaces for customers, employees, and 3rd party suppliers.
+Application Portability using iFunc – Blog (March 2023)
+
+Embedded assembly language within a higher-level language for optimized performance.
+Cross-Platform Compatibility: Developed a program that runs on both ARM and Intel CPUs.
+Used iFunc for multiple function implementations, selecting the appropriate version at runtime.
+Created specific implementations for ASIMD, SVE, and SVE2 in the AArch64 architecture.
+Solved Compatibility Issues: Addressed compatibility challenges with in-line assembler for diverse hardware environments.
+Bank Simulation – GitHub (March 2022)
+
+Simulation of banks, where they can lend and borrow money from each other.
+Program keeps track of the money transactions between each bank, and the current balance.
+Determines the safety situation of the bank based on the loaned and owed money.
+Developed using Java language.
+Company's Assembly Line & Workstations – GitHub (December 2021)
+
+Keeping track of a company’s assembly line consists of workstations holding stock items.
+Workstations fill customer orders by processing a queue of orders.
+Developed using C++ Object-Oriented Programming language with Agile methodology.
+Online Music Store & Creating Playlists – GitHub (November 2021)
+
+Created a web app using Model View Controller to display the Albums, Tracks, Artists, and more.
+Information is fetched from a relational database that contains all the details.
+Users can create a new track and edit playlists.
+Developed using ASP.NET and C#.
