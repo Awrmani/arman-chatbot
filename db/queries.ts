@@ -1,7 +1,7 @@
 "server-only";
 
 import { genSaltSync, hashSync } from "bcrypt-ts";
-import { desc, eq } from "drizzle-orm";
+import { desc, eq, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 
@@ -101,8 +101,8 @@ export async function getChatById({ id }: { id: string }) {
 
 export async function getCompanyLogoUrlbyUserId(id: string) {
   try {
-    const [{ Company: { logoUrl } }] = await db
-      .select()
+    const [logoUrl] = await db
+      .select({url: company.logoUrl})
       .from(company)
       .innerJoin(user, eq(company.id, user.companyId))
       .where(eq(user.id, id));

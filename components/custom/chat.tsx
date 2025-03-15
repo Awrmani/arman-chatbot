@@ -2,12 +2,11 @@
 
 import { Attachment, Message } from 'ai';
 import { useChat } from 'ai/react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { ChatHeader } from '@/components/custom/chat-header';
 import { Message as PreviewMessage } from '@/components/custom/message';
 import { useScrollToBottom } from '@/components/custom/use-scroll-to-bottom';
-import { getCompanyLogoUrlbyUserId } from '@/db/queries';
 import { Model } from '@/lib/model';
 
 import { MultimodalInput } from './multimodal-input';
@@ -17,10 +16,12 @@ export function Chat({
   id,
   initialMessages,
   selectedModelName,
+  logoUrl,
 }: {
   id: string;
   initialMessages: Array<Message>;
   selectedModelName: Model['name'];
+  logoUrl?: string | null;
 }) {
   const { messages, handleSubmit, input, setInput, append, isLoading, stop } =
     useChat({
@@ -36,17 +37,6 @@ export function Chat({
 
   const [attachments, setAttachments] = useState<Array<Attachment>>([]);
 
-  const userId = "e60d57e2-1384-4286-a4a6-d746c09cb4b1";
-  const [logoUrl, setLogoUrl] = useState<string | null>(null);
-
-  useEffect(() => {
-    async function fetchLogoUrl() {
-      const url = await getCompanyLogoUrlbyUserId(userId);
-      setLogoUrl(url);
-    }
-    fetchLogoUrl();
-  }, [userId]);
-
   return (
     <div className="flex flex-col min-w-0 h-dvh bg-background">
       <ChatHeader selectedModelName={selectedModelName} />
@@ -54,7 +44,7 @@ export function Chat({
         ref={messagesContainerRef}
         className="flex flex-col min-w-0 gap-6 flex-1 overflow-y-scroll"
       >
-        {messages.length === 0 && <Overview blob={logoUrl}></Overview>}
+        {messages.length === 0 && logoUrl && <Overview blob={logoUrl} />}
 
         {messages.map((message) => (
           <PreviewMessage
