@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
-import { MessageIcon, VercelIcon } from './icons';
+import { MessageIcon } from './icons';
 
-export const Overview = () => {
+export const Overview = ({ blob }: { blob: string | null}) => {
   return (
     <motion.div
       key="overview"
@@ -20,6 +21,9 @@ export const Overview = () => {
         <p>
           Welcome to my Chatbot!
         </p>
+        <div className="flex justify-center">
+          {blob ? <Image src={blob} alt="blob" width={250} height={250} /> : ""}
+        </div>
       </div>
     </motion.div>
   );

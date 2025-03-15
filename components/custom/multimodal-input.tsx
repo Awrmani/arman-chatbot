@@ -193,6 +193,7 @@ export function MultimodalInput({
         multiple
         onChange={handleFileChange}
         tabIndex={-1}
+        placeholder='input'
       />
 
       {(attachments.length > 0 || uploadQueue.length > 0) && (

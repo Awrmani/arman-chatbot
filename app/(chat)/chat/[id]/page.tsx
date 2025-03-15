@@ -40,10 +40,10 @@ export default async function Page(props: { params: Promise<any> }) {
     models.find((m) => m.name === value)?.name || DEFAULT_MODEL_NAME;
 
   return (
-    <PreviewChat
-      id={chat.id}
-      initialMessages={chat.messages}
-      selectedModelName={selectedModelName}
-    />
+      <PreviewChat
+        id={chat.id}
+        initialMessages={chat.messages}
+        selectedModelName={selectedModelName}
+      />
   );
 }
