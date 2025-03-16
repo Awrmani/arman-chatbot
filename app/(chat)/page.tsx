@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers';
 
+import { auth } from '@/app/(auth)/auth';
 import { Chat } from '@/components/custom/chat';
 import { getCompanyLogoUrlbyUserId } from '@/db/queries';
 import { DEFAULT_MODEL_NAME, models } from '@/lib/model';
@@ -13,7 +14,9 @@ export default async function Page() {
   const selectedModelName =
     models.find((m) => m.name === value)?.name || DEFAULT_MODEL_NAME;
 
-  const userId = "e60d57e2-1384-4286-a4a6-d746c09cb4b1";
+  const session = await auth();
+  const userId = session?.user?.id || '';
+  
   const { url } = await getCompanyLogoUrlbyUserId(userId);
 
   return (
