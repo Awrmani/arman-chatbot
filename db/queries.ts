@@ -22,6 +22,15 @@ export async function getUser(email: string): Promise<Array<User>> {
   }
 }
 
+export async function getUserByMagicToken(magicLink: string): Promise<Array<User>> {
+  try {
+    return await db.select().from(user).where(eq(user.magicLink, magicLink));
+  } catch (error) {
+    console.error("Failed to get user by magic token from database");
+    throw error;
+  }
+}
+
 export async function createUser(email: string, password: string) {
   let salt = genSaltSync(10);
   let hash = hashSync(password, salt);

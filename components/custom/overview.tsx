@@ -22,7 +22,7 @@ export const Overview = ({ blob }: { blob: string | null}) => {
           Welcome to my Chatbot!
         </p>
         <div className="flex justify-center">
-          {blob ? <Image src={blob} alt="blob" width={250} height={250} /> : ""}
+          {blob ? <Image src={blob} alt="blob" width={120} height={120} /> : ""}
         </div>
       </div>
     </motion.div>

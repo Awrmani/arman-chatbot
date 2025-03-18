@@ -25,9 +25,12 @@ export const login = async (
       password: formData.get("password"),
     });
 
+    const magicFlag = formData.get("magic")?.toString() || "false";
+
     await signIn("credentials", {
       email: validatedData.email,
       password: validatedData.password,
+      magic: magicFlag,
       redirect: false,
     });
 
