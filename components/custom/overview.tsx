@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { MessageIcon } from './icons';
 
-export const Overview = ({ blob }: { blob: string | null}) => {
+export const Overview = ({ blob }: { blob?: string | null}) => {
   return (
     <motion.div
       key="overview"

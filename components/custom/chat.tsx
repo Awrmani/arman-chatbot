@@ -2,6 +2,7 @@
 
 import { Attachment, Message } from 'ai';
 import { useChat } from 'ai/react';
+import Image from 'next/image';
 import { useState } from 'react';
 
 import { ChatHeader } from '@/components/custom/chat-header';
@@ -44,7 +45,7 @@ export function Chat({
         ref={messagesContainerRef}
         className="flex flex-col min-w-0 gap-6 flex-1 overflow-y-scroll"
       >
-        {messages.length === 0 && logoUrl && <Overview blob={logoUrl} />}
+        {messages.length === 0 && logoUrl && <Overview />}
 
         {messages.map((message) => (
           <PreviewMessage
@@ -61,7 +62,8 @@ export function Chat({
           className="shrink-0 min-w-[24px] min-h-[24px]"
         />
       </div>
-      <form className="flex mx-auto px-4 bg-background pb-4 md:pb-6 gap-2 w-full md:max-w-3xl">
+      <form className="flex mx-auto px-4 bg-background pb-4 md:pb-6 gap-3 w-full md:max-w-3xl">
+      <div className="self-end relative mb-8 w-20 aspect-square"/>
         <MultimodalInput
           input={input}
           setInput={setInput}
@@ -73,6 +75,18 @@ export function Chat({
           messages={messages}
           append={append}
         />
+        <div className="self-end relative mb-8 w-20 aspect-square">
+          {logoUrl ? (
+            <Image
+              src={logoUrl}
+              alt="Company Logo"
+              className="rounded-full object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={true}
+            />
+          ) : null}{' '}
+        </div>
       </form>
     </div>
   );
