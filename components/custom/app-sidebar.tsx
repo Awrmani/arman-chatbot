@@ -4,7 +4,6 @@ import { Plus } from 'lucide-react';
 import Link from 'next/link';
 import { type User } from 'next-auth';
 
-import { VercelIcon } from '@/components/custom/icons';
 import { SidebarHistory } from '@/components/custom/sidebar-history';
 import { SidebarUserNav } from '@/components/custom/sidebar-user-nav';
 import { Button } from '@/components/ui/button';
