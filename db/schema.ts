@@ -1,6 +1,6 @@
 import { Message } from "ai";
 import { InferSelectModel } from "drizzle-orm";
-import { pgTable, varchar, timestamp, json, uuid } from "drizzle-orm/pg-core";
+import { pgTable, varchar, text, timestamp, json, uuid, date } from "drizzle-orm/pg-core";
 
 export const user = pgTable("User", {
   id: uuid("id").primaryKey().notNull().defaultRandom(),
@@ -32,3 +32,15 @@ export const company = pgTable("Company", {
 });
 
 export type Company = InferSelectModel<typeof company>;
+
+export const project = pgTable("Project", {
+  id: uuid("id").primaryKey().notNull().defaultRandom(),
+  name: varchar("name", { length: 64 }).notNull(),
+  description: varchar("description", { length: 256 }),
+  logoUrl: varchar("logoUrl", { length: 256 }),
+  content: text("content"),
+  startDate: date("startDate").notNull(),
+  endDate: date("endDate"),
+});
+
+export type Project = InferSelectModel<typeof project>;
