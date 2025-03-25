@@ -18,11 +18,13 @@ export function Chat({
   initialMessages,
   selectedModelName,
   logoUrl,
+  children,
 }: {
   id: string;
   initialMessages: Array<Message>;
   selectedModelName: Model['name'];
   logoUrl?: string | null;
+  children?: React.ReactNode;
 }) {
   const { messages, handleSubmit, input, setInput, append, isLoading, stop } =
     useChat({
@@ -37,25 +39,34 @@ export function Chat({
     useScrollToBottom<HTMLDivElement>();
 
   const [attachments, setAttachments] = useState<Array<Attachment>>([]);
+  const [displayProjects, setDisplayProjects] = useState<boolean>(false);
+  
+  const handleDisplayProjects = () => {
+    setDisplayProjects(!displayProjects);
+  }
 
   return (
     <div className="flex flex-col min-w-0 h-dvh bg-background">
-      <ChatHeader selectedModelName={selectedModelName} />
+      <ChatHeader selectedModelName={selectedModelName} handleDisplayProjects={handleDisplayProjects} />
       <div
         ref={messagesContainerRef}
         className="flex flex-col min-w-0 gap-6 flex-1 overflow-y-scroll"
       >
-        {messages.length === 0 && logoUrl && <Overview />}
-
-        {messages.map((message) => (
-          <PreviewMessage
-            key={message.id}
-            role={message.role}
-            content={message.content}
-            attachments={message.experimental_attachments}
-            toolInvocations={message.toolInvocations}
-          />
-        ))}
+        {(messages.length === 0 || displayProjects === true) ? (
+            <div className='m-auto'>
+              {children}
+            </div>
+        ) : (
+          messages.map((message) => (
+            <PreviewMessage
+              key={message.id}
+              role={message.role}
+              content={message.content}
+              attachments={message.experimental_attachments}
+              toolInvocations={message.toolInvocations}
+            />
+          ))
+        )}
 
         <div
           ref={messagesEndRef}
