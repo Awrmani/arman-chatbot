@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation';
 
 import { auth } from '@/app/(auth)/auth';
 import { Chat as PreviewChat } from '@/components/custom/chat';
-import { getChatById } from '@/db/queries';
+import { Project } from '@/components/custom/project';
+import { getChatById, getCompanyLogoUrlbyUserId } from '@/db/queries';
 import { Chat } from '@/db/schema';
 import { DEFAULT_MODEL_NAME, models } from '@/lib/model';
 import { convertToUIMessages } from '@/lib/utils';
@@ -39,11 +40,17 @@ export default async function Page(props: { params: Promise<any> }) {
   const selectedModelName =
     models.find((m) => m.name === value)?.name || DEFAULT_MODEL_NAME;
 
+  const { url } = await getCompanyLogoUrlbyUserId({ id: chat.userId });
+  
+
   return (
       <PreviewChat
         id={chat.id}
         initialMessages={chat.messages}
         selectedModelName={selectedModelName}
-      />
+        logoUrl={url}
+      >
+        <Project />
+      </PreviewChat>
   );
 }

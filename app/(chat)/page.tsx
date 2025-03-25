@@ -18,7 +18,7 @@ export default async function Page() {
   const session = await auth();
   const userId = session?.user?.id || '';
   
-  const { url } = await getCompanyLogoUrlbyUserId(userId);
+  const { url } = await getCompanyLogoUrlbyUserId({ id: userId });
 
   return (
       <Chat
@@ -27,6 +27,8 @@ export default async function Page() {
         initialMessages={[]}
         selectedModelName={selectedModelName}
         logoUrl={url}
-      />
+      >
+        <Project />
+      </Chat>
   );
 }

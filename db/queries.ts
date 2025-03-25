@@ -5,7 +5,7 @@ import { desc, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 
-import { user, chat, User, company } from "./schema";
+import { user, chat, User, company, project } from "./schema";
 
 // Optionally, if not using email/pass login, you can
 // use the Drizzle adapter for Auth.js / NextAuth
@@ -108,7 +108,7 @@ export async function getChatById({ id }: { id: string }) {
   }
 }
 
-export async function getCompanyLogoUrlbyUserId(id: string) {
+export async function getCompanyLogoUrlbyUserId({ id }: { id: string }) {
   try {
     const [logoUrl] = await db
       .select({url: company.logoUrl})
@@ -119,6 +119,15 @@ export async function getCompanyLogoUrlbyUserId(id: string) {
   }
   catch (error) {
     console.error("Failed to get company logo url from database");
+    throw error;
+  }
+}
+
+export async function getProjects() {
+  try {
+    return await db.select().from(project);
+  } catch (error) {
+    console.error("Failed to get projects from database");
     throw error;
   }
 }
