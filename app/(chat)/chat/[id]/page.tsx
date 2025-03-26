@@ -4,8 +4,7 @@ import { notFound } from 'next/navigation';
 
 import { auth } from '@/app/(auth)/auth';
 import { Chat as PreviewChat } from '@/components/custom/chat';
-import { Project } from '@/components/custom/project';
-import { getChatById, getCompanyLogoUrlbyUserId } from '@/db/queries';
+import { getChatById, getCompanyLogoUrlbyUserId, getProjects } from '@/db/queries';
 import { Chat } from '@/db/schema';
 import { DEFAULT_MODEL_NAME, models } from '@/lib/model';
 import { convertToUIMessages } from '@/lib/utils';
@@ -41,7 +40,7 @@ export default async function Page(props: { params: Promise<any> }) {
     models.find((m) => m.name === value)?.name || DEFAULT_MODEL_NAME;
 
   const { url } = await getCompanyLogoUrlbyUserId({ id: chat.userId });
-  
+  const projects = await getProjects();
 
   return (
       <PreviewChat
@@ -49,8 +48,7 @@ export default async function Page(props: { params: Promise<any> }) {
         initialMessages={chat.messages}
         selectedModelName={selectedModelName}
         logoUrl={url}
-      >
-        <Project />
-      </PreviewChat>
+        projects={projects}
+      />
   );
 }

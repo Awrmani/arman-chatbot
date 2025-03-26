@@ -7,24 +7,25 @@ import { useState } from 'react';
 
 import { ChatHeader } from '@/components/custom/chat-header';
 import { Message as PreviewMessage } from '@/components/custom/message';
+import { type Project, ProjectList } from '@/components/custom/projectList';
 import { useScrollToBottom } from '@/components/custom/use-scroll-to-bottom';
 import { Model } from '@/lib/model';
 
 import { MultimodalInput } from './multimodal-input';
-import { Overview } from './overview';
+
 
 export function Chat({
   id,
   initialMessages,
   selectedModelName,
   logoUrl,
-  children,
+  projects,
 }: {
   id: string;
   initialMessages: Array<Message>;
   selectedModelName: Model['name'];
   logoUrl?: string | null;
-  children?: React.ReactNode;
+  projects?: Project[] | null;
 }) {
   const { messages, handleSubmit, input, setInput, append, isLoading, stop } =
     useChat({
@@ -52,10 +53,15 @@ export function Chat({
         ref={messagesContainerRef}
         className="flex flex-col min-w-0 gap-6 flex-1 overflow-y-scroll"
       >
-        {(messages.length === 0 || displayProjects === true) ? (
-            <div className='m-auto'>
-              {children}
-            </div>
+      {(messages.length === 0 || displayProjects === true) ? (
+        <div className='m-auto'>
+          <ProjectList
+            projects={projects}
+            append={append}
+            // Pass a callback to let a child change displayProjects value
+            onProjectClick={() => setDisplayProjects(false)}
+          />
+        </div>
         ) : (
           messages.map((message) => (
             <PreviewMessage

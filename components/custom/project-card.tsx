@@ -17,19 +17,19 @@ export function ProjectCard({
   cardFooter,
   cardImageUrl,
   cardContent,
+  onClick,
 }: {
   cardTitle: string;
   cardDescription: string | null;
   cardFooter: string;
   cardImageUrl: string | null;
   cardContent: string | null;
+  onClick: () => void;
 }) {
   return (
     <Card className='group cursor-pointer hover:bg-zinc-900'
-      onClick={() => {
-        console.log('ProjectCard Clicked');
-      }
-    }>
+      onClick={onClick}
+    >
       <CardHeader>
         <CardTitle>{cardTitle}</CardTitle>
         <CardDescription>{cardDescription}</CardDescription>
