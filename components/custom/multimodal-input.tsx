@@ -22,23 +22,23 @@ import { Textarea } from '../ui/textarea';
 const suggestedActions = [
   {
     title: 'Education',
-    label: "What does Arman's education look like?",
-    action: "What does Arman's education look like?",
+    label: "How does your education look like?",
+    action: "How does your education look like?",
   },
   {
     title: "Experience",
-    label: "Summarize Arman's work experience",
-    action: "Summarize Arman's work experience",
+    label: "Tell me about your work experience!",
+    action: "Tell me about your work experience!",
   },
   {
-    title: "Projects",
-    label: "Summarize Arman's work experience",
-    action: "Summarize Arman's work experience",
+    title: "Technical Skills",
+    label: "What are your technical skills?",
+    action: "What are your technical skills?",
   },
   {
-    title: "Projects",
-    label: "Summarize Arman's work experience",
-    action: "Summarize Arman's work experience",
+    title: "Core Values",
+    label: "What Are Your Core Values?",
+    action: "What Are Your Core Values?",
   },
 ];
 

@@ -38,25 +38,25 @@ const displayProjects = (
 
     const handleProjectClick = async () => {
       try {
-      await append({
-        role: 'user',
-        content: `Tell me about ${project.name} details.`,
-      });
-      onProjectClick && onProjectClick();
+        onProjectClick && onProjectClick();
+        await append({
+          role: 'user',
+          content: `Tell me about ${project.name}!`,
+        });
       } catch (error) {
-      console.error("Error appending project:", error);
+        console.error('Error appending project:', error);
       }
     };
 
     return (
       <ProjectCard
-      key={project.id}
-      cardTitle={project.name}
-      cardDescription={project.description}
-      cardFooter={cardFooter}
-      cardImageUrl={project.logoUrl}
-      cardContent={project.content}
-      onClick={handleProjectClick}
+        key={project.id}
+        cardTitle={project.name}
+        cardDescription={project.description}
+        cardFooter={cardFooter}
+        cardImageUrl={project.logoUrl}
+        cardContent={project.content}
+        onClick={handleProjectClick}
       />
     );
   });
@@ -76,7 +76,9 @@ export function ProjectList({
 }) {
   return (
     <>
-      <div className="grid grid-cols-3 gap-12">{displayProjects(append, projects, onProjectClick)}</div>
+      <div className="grid grid-cols-3 gap-12">
+        {displayProjects(append, projects, onProjectClick)}
+      </div>
     </>
   );
 }
