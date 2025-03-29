@@ -13,7 +13,6 @@ import { Model } from '@/lib/model';
 
 import { MultimodalInput } from './multimodal-input';
 
-
 export function Chat({
   id,
   initialMessages,
@@ -41,70 +40,73 @@ export function Chat({
 
   const [attachments, setAttachments] = useState<Array<Attachment>>([]);
   const [displayProjects, setDisplayProjects] = useState<boolean>(false);
-  
-  const handleDisplayProjects = () => {
-    setDisplayProjects(!displayProjects);
-  }
 
   return (
-    <div className="flex flex-col min-w-0 h-dvh bg-background">
-      <ChatHeader selectedModelName={selectedModelName} handleDisplayProjects={handleDisplayProjects} />
-      <div
-        ref={messagesContainerRef}
-        className="flex flex-col min-w-0 gap-6 flex-1 overflow-y-scroll"
-      >
-      {(messages.length === 0 || displayProjects === true) ? (
-        <div className='m-auto'>
-          <ProjectList
-            projects={projects}
-            append={append}
-            // Pass a callback to let a child change displayProjects value
-            onProjectClick={() => setDisplayProjects(false)}
+    (
+      <div className="flex flex-col min-w-0 h-dvh bg-background">
+        <ChatHeader
+          displayProjectsButton={messages.length > 0 ? true : false}
+          selectedModelName={selectedModelName}
+          handleDisplayProjects={() => setDisplayProjects(!displayProjects)}
+          displayProjects={displayProjects}
+        />
+        <div
+          ref={messagesContainerRef}
+          className="flex flex-col min-w-0 gap-6 flex-1 overflow-y-scroll"
+        >
+          {messages.length === 0 || displayProjects === true ? (
+            <div className="m-auto">
+              <ProjectList
+                projects={projects}
+                append={append}
+                // Pass a callback to let a child change displayProjects value
+                onProjectClick={() => setDisplayProjects(false)}
+              />
+            </div>
+          ) : (
+            messages.map((message) => (
+              <PreviewMessage
+                key={message.id}
+                role={message.role}
+                content={message.content}
+                attachments={message.experimental_attachments}
+                toolInvocations={message.toolInvocations}
+              />
+            ))
+          )}
+
+          <div
+            ref={messagesEndRef}
+            className="shrink-0 min-w-[24px] min-h-[24px]"
           />
         </div>
-        ) : (
-          messages.map((message) => (
-            <PreviewMessage
-              key={message.id}
-              role={message.role}
-              content={message.content}
-              attachments={message.experimental_attachments}
-              toolInvocations={message.toolInvocations}
-            />
-          ))
-        )}
-
-        <div
-          ref={messagesEndRef}
-          className="shrink-0 min-w-[24px] min-h-[24px]"
-        />
+        <form className="flex mx-auto px-4 bg-background pb-4 md:pb-6 gap-3 w-full md:max-w-3xl">
+          <div className="self-end relative mb-8 w-20 aspect-square" />
+          <MultimodalInput
+            input={input}
+            setInput={setInput}
+            handleSubmit={handleSubmit}
+            isLoading={isLoading}
+            stop={stop}
+            attachments={attachments}
+            setAttachments={setAttachments}
+            messages={messages}
+            append={append}
+          />
+          <div className="self-end relative mb-8 w-20 aspect-square">
+            {logoUrl ? (
+              <Image
+                src={logoUrl}
+                alt="Company Logo"
+                className="object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={true}
+              />
+            ) : null}{' '}
+          </div>
+        </form>
       </div>
-      <form className="flex mx-auto px-4 bg-background pb-4 md:pb-6 gap-3 w-full md:max-w-3xl">
-      <div className="self-end relative mb-8 w-20 aspect-square"/>
-        <MultimodalInput
-          input={input}
-          setInput={setInput}
-          handleSubmit={handleSubmit}
-          isLoading={isLoading}
-          stop={stop}
-          attachments={attachments}
-          setAttachments={setAttachments}
-          messages={messages}
-          append={append}
-        />
-        <div className="self-end relative mb-8 w-20 aspect-square">
-          {logoUrl ? (
-            <Image
-              src={logoUrl}
-              alt="Company Logo"
-              className="rounded-full object-cover"
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              priority={true}
-            />
-          ) : null}{' '}
-        </div>
-      </form>
-    </div>
+    )
   );
 }
