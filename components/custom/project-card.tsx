@@ -27,24 +27,24 @@ export function ProjectCard({
   onClick: () => void;
 }) {
   return (
-    <Card className='group cursor-pointer hover:bg-zinc-900'
+    <Card className='group cursor-pointer hover:bg-zinc-900 max-w-80'
       onClick={onClick}
     >
       <CardHeader>
         <CardTitle>{cardTitle}</CardTitle>
         <CardDescription>{cardDescription}</CardDescription>
       </CardHeader>
-      <CardContent className='max-w-80'>
-        <div className="relative w-72 [aspect-ratio:5/2]">
-          <Image
-            className="object-fill"
+      <CardContent>
+        <div className="relative [aspect-ratio:5/2]">
+            <Image
+            className="object-contain object-center group-hover:opacity-80 transition-opacity duration-300 ease-in-out rounded-lg mx-auto"
             fill
             src={
               cardImageUrl ||
               'https://qq5zqpo4wcrtelgo.public.blob.vercel-storage.com/placeholder-image-czZLITHg8WsprbclOsiiAxP79hwZO2.png'
             }
             alt={'Project - ' + cardTitle}
-          ></Image>
+            ></Image>
         </div>
         <div className="mt-2">{cardContent}</div>
       </CardContent>

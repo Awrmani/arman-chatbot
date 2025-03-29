@@ -1,6 +1,13 @@
 import { Message, CreateMessage, ChatRequestOptions } from 'ai';
 
 import { ProjectCard } from '@/components/custom/project-card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 export interface Project {
   id: number | string;
@@ -49,15 +56,16 @@ const displayProjects = (
     };
 
     return (
-      <ProjectCard
-        key={project.id}
-        cardTitle={project.name}
-        cardDescription={project.description}
-        cardFooter={cardFooter}
-        cardImageUrl={project.logoUrl}
-        cardContent={project.content}
-        onClick={handleProjectClick}
-      />
+      <CarouselItem key={project.id} className="max-w-md">
+        <ProjectCard
+          cardTitle={project.name}
+          cardDescription={project.description}
+          cardFooter={cardFooter}
+          cardImageUrl={project.logoUrl}
+          cardContent={project.content}
+          onClick={handleProjectClick}
+        />
+      </CarouselItem>
     );
   });
 };
@@ -76,9 +84,18 @@ export function ProjectList({
 }) {
   return (
     <>
-      <div className="grid grid-cols-3 gap-12">
-        {displayProjects(append, projects, onProjectClick)}
-      </div>
+      <Carousel
+        opts={{
+          align: 'center',
+          loop: true,
+        }}
+      >
+        <CarouselContent>
+          {displayProjects(append, projects, onProjectClick)}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </>
   );
 }
