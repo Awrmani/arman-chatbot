@@ -56,7 +56,7 @@ const displayProjects = (
     };
 
     return (
-      <CarouselItem key={project.id} className="max-w-md">
+      <CarouselItem key={project.id} className="basis-1/3">
         <ProjectCard
           cardTitle={project.name}
           cardDescription={project.description}
@@ -83,7 +83,7 @@ export function ProjectList({
   onProjectClick: () => void;
 }) {
   return (
-    <>
+    <div className='max-w-min'>
       <Carousel
         opts={{
           align: 'center',
@@ -96,6 +96,6 @@ export function ProjectList({
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-    </>
+    </div>
   );
 }

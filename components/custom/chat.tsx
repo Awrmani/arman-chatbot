@@ -94,12 +94,12 @@ export function Chat({
             messages={messages}
             append={append}
           />
-          <div className="self-end relative mb-8 w-20 aspect-square">
+          <div className="self-end relative w-16 aspect-square rounded-full">
             {logoUrl ? (
               <Image
                 src={logoUrl}
                 alt="Company Logo"
-                className="object-cover"
+                className="object-cover rounded-lg"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority={true}
