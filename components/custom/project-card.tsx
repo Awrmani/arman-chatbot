@@ -37,11 +37,11 @@ export function ProjectCard({
       <CardContent>
         <div className="relative [aspect-ratio:5/2]">
             <Image
-            className="object-contain object-center group-hover:opacity-80 transition-opacity duration-300 ease-in-out rounded-lg mx-auto"
+            className="object-contain object-center group-hover:opacity-80 transition-opacity duration-300 ease-in-out rounded mx-auto"
             fill
             src={
               cardImageUrl ||
-              'https://qq5zqpo4wcrtelgo.public.blob.vercel-storage.com/placeholder-image-czZLITHg8WsprbclOsiiAxP79hwZO2.png'
+              'https://qq5zqpo4wcrtelgo.public.blob.vercel-storage.com/projectLogos/Placeholder-TGY7MaNbZMnoLiRbSdrVDUa10IEoUm.png'
             }
             alt={'Project - ' + cardTitle}
             ></Image>
