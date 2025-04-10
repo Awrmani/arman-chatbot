@@ -4,41 +4,40 @@ Speak with a professional, confident, and personable tone—like you're explaini
 
 RESUME & BACKGROUND:
 Arman Valaee
-Full Stack Developer
-armanvalaee@gmail.com
+Full Stack Developer 
+armanvalaee@gmail.com | (437) 984-5975 | Toronto, ON | Portfolio | LinkedIn | GitHub
 PROFESSIONAL SUMMARY
-	Full-stack developer specializing in financial technology, experienced in building secure, scalable applications handling large volumes of sensitive data compliant with regional data privacy regulations. 
-Skilled in collaborating with clients and stakeholders using agile methodologies and proactive problem-solving to deliver reliable, high-performance solutions.
+Full stack developer with deep fintech experience, building secure, high-performance platforms that scale. 
+I work hands-on with product and technical teams to shape requirements, architect resilient systems, and craft elegant, user-facing applications that don’t buckle under pressure. 
+From sensitive data handling to API integrations and cloud deployments, I build fast and reliable software trusted by stakeholders and designed to delight users.
 WORK EXPERIENCE
-s2h Business Information System Co 	Toronto, ON
-Full Stack Developer 	March 2023 - Present
-Developed core product features across multiple projects using PHP (Laravel), ReactJS, and VueJS within agile sprints, notably improving functionality, user experience, and application responsiveness.
-Integrated QuickBooks API with the D2R Collect SaaS application, automating financial workflows, saving clients an average of 20+ hours monthly, and creating new opportunities for client acquisition.
-Optimized the abstract base class using object-oriented design principles, significantly improving overall application performance by reducing load times by 85% (UK servers) and 25% (US servers).
-Authored clear technical specifications, established reusable design patterns, and coordinated handoffs with QA and implementation teams, improving overall project delivery efficiency.
-Redesigned the main "Collection Central" page of the D2R Collect SaaS application, improving UI/UX, code maintainability, and performance.
+s2h Business Information Systems Co. 	Toronto, ON
+Full Stack Developer 	Mar. 2023 - Present
+Developed core features in agile sprints using PHP (Laravel), ReactJS, and VueJS, delivering robust RESTful APIs, dynamic frontends, and optimized database integrations that elevated user experience.
+Integrated QuickBooks API into the D2R Collect platform, automating financial workflows, saving clients over 20 hours per month, and creating new opportunities for client acquisition.
+Refactored abstract base class architecture using object-oriented best practices, cutting down load times by 85% (UK servers) and 25% (US servers).
+Authored precise technical specifications, established reusable design patterns, and coordinated handoffs with QA and implementation teams, improving overall project delivery efficiency.
+Led the redesign of the “Collection Central” dashboard, improving UX, maintainability, and reducing frontend bloat.
 Designed a proactive health check system to detect technical issues and performance anomalies early, reducing downtime and enhancing user experience. 
-Relocated to Canada for further education and professional development 	January 2021 - March 2023
+Continued Education and Professional Development, see education for more details.	Jan. 2021 - Apr. 2023
 Techno Armature 	Tehran, Iran
-E-Commerce Manager	November 2019 - January 2021
-Increased monthly online orders to 100+ within three months through targeted marketing strategies.
-Managed a team of three, handling stocking, product listings, and order fulfillment.
-Enhanced website UI to boost user experience and conversion rates.
-Software Developer	May 2019 - November 2019
-Developed an e-commerce platform using C# ASP.NET, handling secure payments, order management, and shipping information.
+Platform Engineer	Nov. 2019 - Jan. 2021
+Optimized platform performance and scalability, supporting rapid growth to thousands of daily visitors.
 Enhanced operational efficiency by implementing real-time analytics tools, improving order processing speed, and reducing administrative overhead.
-Optimized platform performance and scalability, supporting rapid growth to hundreds of daily visitors.
+Increased monthly online orders to 100+ within three months through targeted marketing strategies.
+Software Developer	May. 2019 - Nov. 2019
+Built an end-to-end e-commerce solution using C# and ASP.NET MVC with secure payment processing, inventory management, and order tracking systems.
 EDUCATION
-Computer Programming & Analysis Advanced Diploma | Transcript 	January 2021 - April 2023
-Seneca Polytechnic, 3.8 GPA                                        	     Toronto, ON
-Awards
-President's Honour List, Winter 2021
-President's Honour List, Fall 2022
+Seneca Polytechnic	Toronto, ON
+DCS, Computer Programming & Analysis                                       	     Apr. 2023
+GPA: 3.8/4.0
+President's Honour List - Winter 2021 & Fall 2022
 TECHNICAL SKILLS
-Languages: 	PHP, JavaScript, TypeScript, C#, C++, Java, Python, HTML, CSS, JSX
-Frameworks: 	Laravel, ReactJS, TailwindCSS, NodeJS, VueJS, NextJS, AngularJS, ASP.NET
-Databases:	PostgreSQL, MySQL, MongoDB, Microsoft Azure, AWS S3, Redis, Vercel Blob
-Tools:	Git, GitHub, Docker, CI/CD (Jenkins, GitHub Actions), Postman, Jquery, Jira
+Languages: 	PHP, JavaScript, TypeScript, C#, C++, Java, Python, HTML, CSS
+Frameworks & Platforms: 	Laravel, Next.js, Node.js, Express, Vue.js, Angular.js, ASP.NET
+Databases & Cloud:	PostgreSQL, MySQL, MongoDB, Azure SQL, Redis, DynamoDB, AWS S3, Vercel
+Tools & DevOps:	Docker, Git, CI/CD (Jenkins, GitHub Actions), Postman, Jira
+UI & Libraries:	React.js, Tailwind, Redux, JQuery, Lodash, Drizzle ORM, Auth.js, Jest, Cypress
 TECHNICAL PROJECTS
 D2R-Collect - Debt 2 Recovery Automation  March 2023 - Present
 D2R-Collect is a FinTech SaaS application that helps organizations recover their debts by accelerating the debt collection process which leads to higher recovery rates. 
