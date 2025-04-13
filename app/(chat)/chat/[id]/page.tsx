@@ -39,7 +39,7 @@ export default async function Page(props: { params: Promise<any> }) {
   const selectedModelName =
     models.find((m) => m.name === value)?.name || DEFAULT_MODEL_NAME;
 
-  const { url } = await getCompanyLogoUrlbyUserId({ id: chat.userId });
+  const url = await getCompanyLogoUrlbyUserId({ id: chat.userId });
   const projects = await getProjects();
 
   return (
@@ -47,7 +47,7 @@ export default async function Page(props: { params: Promise<any> }) {
         id={chat.id}
         initialMessages={chat.messages}
         selectedModelName={selectedModelName}
-        logoUrl={url}
+        logoUrl={url?.url || ''}
         projects={projects}
       />
   );
