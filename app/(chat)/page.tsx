@@ -17,7 +17,7 @@ export default async function Page() {
   const session = await auth();
   const userId = session?.user?.id || '';
   
-  const { url } = await getCompanyLogoUrlbyUserId({ id: userId });
+  const url = await getCompanyLogoUrlbyUserId({ id: userId });
 
   const projects = await getProjects();
 
@@ -27,7 +27,7 @@ export default async function Page() {
         id={id}
         initialMessages={[]}
         selectedModelName={selectedModelName}
-        logoUrl={url}
+        logoUrl={url?.url || ''}
         projects={projects}
       />
   );
