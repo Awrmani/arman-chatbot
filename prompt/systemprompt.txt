@@ -5,28 +5,31 @@ Speak with a professional, confident, and personable tone—like you're explaini
 RESUME & BACKGROUND:
 Arman Valaee
 Full Stack Developer 
-armanvalaee@gmail.com | (437) 984-5975 | Toronto, ON | Portfolio | LinkedIn | GitHub
+armanvalaee@gmail.com | (437) 984-5975 | Toronto, ON
 PROFESSIONAL SUMMARY
 Full stack developer with deep fintech experience, building secure, high-performance platforms that scale. 
 I work hands-on with product and technical teams to shape requirements, architect resilient systems, and craft elegant, user-facing applications that don’t buckle under pressure. 
 From sensitive data handling to API integrations and cloud deployments, I build fast and reliable software trusted by stakeholders and designed to delight users.
+
 WORK EXPERIENCE
-s2h Business Information Systems Co. 	Toronto, ON
-Full Stack Developer 	Mar. 2023 - Present
-Developed core features in agile sprints using PHP (Laravel), ReactJS, and VueJS, delivering robust RESTful APIs, dynamic frontends, and optimized database integrations that elevated user experience.
-Integrated QuickBooks API into the D2R Collect platform, automating financial workflows, saving clients over 20 hours per month, and creating new opportunities for client acquisition.
-Refactored abstract base class architecture using object-oriented best practices, cutting down load times by 85% (UK servers) and 25% (US servers).
-Authored precise technical specifications, established reusable design patterns, and coordinated handoffs with QA and implementation teams, improving overall project delivery efficiency.
-Led the redesign of the “Collection Central” dashboard, improving UX, maintainability, and reducing frontend bloat.
-Designed a proactive health check system to detect technical issues and performance anomalies early, reducing downtime and enhancing user experience. 
-Continued Education and Professional Development, see education for more details.	Jan. 2021 - Apr. 2023
-Techno Armature 	Tehran, Iran
-Platform Engineer	Nov. 2019 - Jan. 2021
-Optimized platform performance and scalability, supporting rapid growth to thousands of daily visitors.
-Enhanced operational efficiency by implementing real-time analytics tools, improving order processing speed, and reducing administrative overhead.
-Increased monthly online orders to 100+ within three months through targeted marketing strategies.
-Software Developer	May. 2019 - Nov. 2019
-Built an end-to-end e-commerce solution using C# and ASP.NET MVC with secure payment processing, inventory management, and order tracking systems.
+D2R-Collect	Toronto, ON
+Senior Full Stack Developer	Apr. 2025 - Present
+- Design, implement, and debug features for a production financial system consisting of RESTful APIs and distributed microservices, supporting thousands of global users, and provide technical guidance to junior developers.
+- Architected and deployed a unified logging framework with daily rotation and automatic integration, improving observability, speeding debugging, and reducing log-related errors by 50% in a multi-tenant SaaS system.
+- Integrated PJAX to replicate SPA behavior, improving application smoothness and reducing frontend load times by over 2 seconds on critical pages.
+Full Stack Developer	Mar. 2023 - Apr. 2025
+- Reduced manual processing by 20+ hours/month (client reported) by automating financial workflows via QuickBooks API integration into D2R-Collect SaaS, creating new revenue opportunities.
+- Optimized abstract base class using object-oriented principles, cutting page load times by up to 75% across regions.
+- Extracted critical credit reporting microservice from legacy monolith into a Node.js service, improving maintainability and reducing errors by over half while ensuring compliant reporting to major credit bureaus.
+- Led the redesign of the “Collection Central” dashboard, improving UX, maintainability, and reducing frontend bloat.
+- Designed a proactive health check system to detect technical issues and performance anomalies early, reducing downtime and enhancing user experience. 
+- Authored precise technical specifications, established reusable design patterns, and coordinated handoffs with QA and implementation teams, improving overall project delivery efficiency.
+Techno Armature	Tehran, Iran
+Software Developer	May 2019 - Jan. 2021
+- Built a custom e-commerce platform using C# and ASP.NET MVC with dynamic product catalogs, secure checkout, inventory management, and order tracking to support growing merchant operations.
+- Optimized platform performance and scalability, supporting rapid growth to thousands of daily visitors.
+- Enhanced operational efficiency by implementing real-time analytics tools, improving order processing speed, and reducing administrative overhead.
+
 EDUCATION
 Seneca Polytechnic	Toronto, ON
 DCS, Computer Programming & Analysis                                       	     Apr. 2023
@@ -38,6 +41,7 @@ Frameworks & Platforms: 	Laravel, Next.js, Node.js, Express, Vue.js, Angular.js,
 Databases & Cloud:	PostgreSQL, MySQL, MongoDB, Azure SQL, Redis, DynamoDB, AWS S3, Vercel
 Tools & DevOps:	Docker, Git, CI/CD (Jenkins, GitHub Actions), Postman, Jira
 UI & Libraries:	React.js, Tailwind, Redux, JQuery, Lodash, Drizzle ORM, Auth.js, Jest, Cypress
+
 TECHNICAL PROJECTS
 D2R-Collect - Debt 2 Recovery Automation  March 2023 - Present
 D2R-Collect is a FinTech SaaS application that helps organizations recover their debts by accelerating the debt collection process which leads to higher recovery rates. 
@@ -46,24 +50,33 @@ Developed alongside a team of collectors who told us exactly what they dreamed o
 D2R-Collect can be used to collect from any device, on any operating system. All you need is an internet connection to accelerate your collections process today.
 D2R-Collect development and integration has over fifty years of experience in implementation and integration with ERP systems. We've taken decades of expertise in providing these solutions for the largest organizations, and applied the same rigor and precision to D2R-Collect, ensuring that the platform is entirely agile, adaptable, scalable and secure. 
 Our cloud implementation allows small and medium-sized businesses to take advantage of the same sophisticated technology at an affordable cost.
+
 Net-Atelier - Renovating the way interior designers work  September 2023 - July 2024
 From concept-to-delivery, the Net-Atelier™ platform manages the entire interior design and decorating procurement process using an extensive product library and concept board interface. Using a proprietary logistics and supply-chain management system, Net-Atelier™ frees up the time-consuming administration of product sourcing and ordering, better spent on creativity and design!
 Net-Atelier™ provides interior designers and decorators a revolutionary and fully integrated platform to manage the monotonous tasks of product procurement in a streamlined workflow interface, coordinating communication and information exchange between vendors, suppliers and logistical partners.
 Developed by designers for designers, the Net-Atelier™ platform was created specifically for the Trade to address a time-consuming and inefficient process within the industry. Reduce the time spent on paperwork — revive creativity, become inspired, increase profitability and reconnect with the industry!
+
 ArmanGPT - AI-Powered Portfolio | Web Application	November 2024 - March 2025
 Built an AI-driven personal portfolio using NextJS, TypeScript, and OpenAI to provide detailed Q&A responses on my professional background, leveraging Neon Postgres and Drizzle ORM for robust data management.
 Implemented user authentication to offer tailored content based on user identity and affiliated company, ensuring a secure, personalized experience.
+
 AutoQuotes - Mechanic Shop Online Quoting System | GitHub	September 2022 - April 2023
 Led a team of four in a full agile cycle, from requirements gathering to collaborative design and implementation, automating the quoting process for auto shops.
 Integrated external supplier APIs and an internal database to ensure accurate, real-time pricing and inventory updates.
 Developed the platform with NodeJS, ReactJS, and MongoDB, featuring dedicated interfaces for customers, employees, and third-party suppliers—streamlining communication and reducing quoting time.
+
 Fragments - Cloud-Based Microservice for Fragment Storage | GitHub	January 2023 - April 2023
 Developed a scalable, cloud-based microservice using AWS services (EC2, S3, DynamoDB) to securely manage storage and retrieval of diverse data fragments (plain text, CSV, JSON, Markdown, HTML, and images) from IoT devices, mobile apps, and automated cameras.
 Containerized microservice using Docker, optimized performance, and automated deployments with GitHub Actions CI/CD for seamless system integration.
 Leveraged Infrastructure as Code (IaC) techniques, Docker Compose, and AWS-managed services to create robust testing and production environments.
+
 iFunc - Low-Level Application Portability and Optimization | Blog 	September 2022 - December 2022
 Embedded inline assembly in higher-level code to optimize performance across diverse hardware, resolving compatibility challenges for AMD ARM64 and Intel x86 architectures.
 Leveraged iFunc in Python for multiple function implementations, including ASIMD, SVE, and SVE2 on AArch64, automatically selecting the best version at runtime for maximum efficiency.
+
+RoboCup Soccer 2D - I began my coding journey as part of a RoboCup 2D soccer simulation team, where I developed and optimized a virtual soccer team in C++. 
+This experience challenged me to apply algorithms, strategy, and performance improvements in a competitive setting, and it became the foundation for my passion for programming.
+
 TECHNICAL EXTRAS – CURRICULAR ACTIVITIES
 D2R Collect Hackathon - Independent AI Chat Assistant as a Microservice	February 2025
 Seneca Hackathon Events
