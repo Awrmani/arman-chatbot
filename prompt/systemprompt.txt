@@ -7,40 +7,28 @@ Arman Valaee
 Full Stack Developer 
 armanvalaee@gmail.com | (437) 984-5975 | Toronto, ON
 PROFESSIONAL SUMMARY
-Full stack developer with deep fintech experience, building secure, high-performance platforms that scale. 
-I work hands-on with product and technical teams to shape requirements, architect resilient systems, and craft elegant, user-facing applications that don’t buckle under pressure. 
-From sensitive data handling to API integrations and cloud deployments, I build fast and reliable software trusted by stakeholders and designed to delight users.
-
+Full Stack Engineer with 4+ years of experience delivering scalable, customer-centric solutions in high-growth financial platforms. Proven track record of end-to-end feature ownership, driving technical initiatives from initial system design through to production infrastructure. An impact-driven and approachable leader dedicated to mentoring teams, fostering collaborative engineering cultures, and balancing technical excellence with business speed.
 WORK EXPERIENCE
 D2R-Collect	Toronto, ON
-Senior Full Stack Developer	Apr. 2025 - Present
-- Design, implement, and debug features for a production financial system consisting of RESTful APIs and distributed microservices, supporting thousands of global users, and provide technical guidance to junior developers.
-- Architected and deployed a unified logging framework with daily rotation and automatic integration, improving observability, speeding debugging, and reducing log-related errors by 50% in a multi-tenant SaaS system.
-- Integrated PJAX to replicate SPA behavior, improving application smoothness and reducing frontend load times by over 2 seconds on critical pages.
-Full Stack Developer	Mar. 2023 - Apr. 2025
-- Reduced manual processing by 20+ hours/month (client reported) by automating financial workflows via QuickBooks API integration into D2R-Collect SaaS, creating new revenue opportunities.
-- Optimized abstract base class using object-oriented principles, cutting page load times by up to 75% across regions.
-- Extracted critical credit reporting microservice from legacy monolith into a Node.js service, improving maintainability and reducing errors by over half while ensuring compliant reporting to major credit bureaus.
-- Led the redesign of the “Collection Central” dashboard, improving UX, maintainability, and reducing frontend bloat.
-- Designed a proactive health check system to detect technical issues and performance anomalies early, reducing downtime and enhancing user experience. 
-- Authored precise technical specifications, established reusable design patterns, and coordinated handoffs with QA and implementation teams, improving overall project delivery efficiency.
-Techno Armature	Tehran, Iran
-Software Developer	May 2019 - Jan. 2021
-- Built a custom e-commerce platform using C# and ASP.NET MVC with dynamic product catalogs, secure checkout, inventory management, and order tracking to support growing merchant operations.
-- Optimized platform performance and scalability, supporting rapid growth to thousands of daily visitors.
-- Enhanced operational efficiency by implementing real-time analytics tools, improving order processing speed, and reducing administrative overhead.
-
-EDUCATION
-Seneca Polytechnic	Toronto, ON
-DCS, Computer Programming & Analysis                                       	     Apr. 2023
-GPA: 3.8/4.0
-President's Honour List - Winter 2021 & Fall 2022
+Senior Full Stack Developer	Apr 2025 - Present
+Lead full-stack development of core financial features for a production platform serving thousands of users (REST APIs, PHP, Node, React), mentoring junior developers, and driving code quality standards.
+Architected a unified observability pipeline with daily log rotations, improving system visibility and cutting Mean Time to Resolution (MTTR) by 50% for a multi-tenant SaaS.
+Optimized frontend architecture to support asynchronous navigation (SPA behavior), eliminating full-page reloads and cutting critical page load times by 2+ seconds.
+Full Stack Developer	Mar 2023 - Apr 2025
+Engineered a robust two-way sync integration with QuickBooks Online (OAuth2), saving clients 20+ hours/month per client and unlocking a new revenue stream by automating previously manual accounting workflows.
+Refactored and optimized the database layer, reducing data-heavy page load times by up to 75% across global regions.
+Extracted critical credit reporting module from legacy monolith into a Node.js microservice, improving maintainability and reducing API error rates by over half while ensuring compliant reporting to major credit bureaus.
+Led redesign of Collection Central dashboard in React, improving UX and scalability, while reducing frontend bloat.
+Techno Armature	Tehran, IR
+Junior Software Developer	May 2019 - Jan 2021
+Built a custom e-commerce platform using C# and ASP.NET MVC with dynamic product catalogs, secure checkout, inventory management, and order tracking to support growing merchant operations.
+Optimized platform performance and scalability, supporting rapid growth to thousands of daily visitors.
 TECHNICAL SKILLS
-Languages: 	PHP, JavaScript, TypeScript, C#, C++, Java, Python, HTML, CSS
-Frameworks & Platforms: 	Laravel, Next.js, Node.js, Express, Vue.js, Angular.js, ASP.NET
-Databases & Cloud:	PostgreSQL, MySQL, MongoDB, Azure SQL, Redis, DynamoDB, AWS S3, Vercel
-Tools & DevOps:	Docker, Git, CI/CD (Jenkins, GitHub Actions), Postman, Jira
-UI & Libraries:	React.js, Tailwind, Redux, JQuery, Lodash, Drizzle ORM, Auth.js, Jest, Cypress
+Frameworks & Platforms: 	Node.js, Nest.js, Laravel, ASP.NET MVC, Next.js, Express, Angular, Spring Boot, Vue.js
+Databases & Cloud:	PostgreSQL, MySQL, AWS (S3, DynamoDB, EC2, ELB, lambda), MongoDB, Redis
+Tools & DevOps:	Docker, Git, CI/CD (Jenkins, GitHub Actions), Postman, Jira, New Relic
+UI & Libraries:	React.js, Redux, JQuery, Tailwind CSS, Drizzle ORM, GraphQL, Auth.js, Jest, Cypress
+Languages: 	JavaScript, TypeScript, PHP, SQL, Java, C#, C++, Python, HTML, CSS
 
 TECHNICAL PROJECTS
 D2R-Collect - Debt 2 Recovery Automation  March 2023 - Present
