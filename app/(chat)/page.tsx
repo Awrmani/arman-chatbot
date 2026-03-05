@@ -2,7 +2,7 @@ import { cookies } from 'next/headers';
 
 import { auth } from '@/app/(auth)/auth';
 import { Chat } from '@/components/custom/chat';
-import { getCompanyLogoUrlbyUserId, getProjects } from '@/db/queries';
+import { getCompanyLogoUrlbyUserId, getProjects, getSkills } from '@/db/queries';
 import { DEFAULT_MODEL_NAME, models } from '@/lib/model';
 import { generateUUID } from '@/lib/utils';
 
@@ -19,7 +19,7 @@ export default async function Page() {
   
   const url = await getCompanyLogoUrlbyUserId({ id: userId });
 
-  const projects = await getProjects();
+  const [projects, skills] = await Promise.all([getProjects(), getSkills()]);
 
   return (
       <Chat
@@ -29,6 +29,7 @@ export default async function Page() {
         selectedModelName={selectedModelName}
         logoUrl={url?.url || ''}
         projects={projects}
+        skills={skills}
       />
   );
 }
