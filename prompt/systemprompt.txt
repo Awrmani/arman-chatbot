@@ -44,6 +44,10 @@ From concept-to-delivery, the Net-Atelier™ platform manages the entire interio
 Net-Atelier™ provides interior designers and decorators a revolutionary and fully integrated platform to manage the monotonous tasks of product procurement in a streamlined workflow interface, coordinating communication and information exchange between vendors, suppliers and logistical partners.
 Developed by designers for designers, the Net-Atelier™ platform was created specifically for the Trade to address a time-consuming and inefficient process within the industry. Reduce the time spent on paperwork — revive creativity, become inspired, increase profitability and reconnect with the industry!
 
+VS Code Mock Interviewer AI - prepare for coding interviews by doing real coding interviews! | VS code extension + Web application  January 2026 - Present
+A mock interview platform built in vs code extension + web application, using react, next.js and nest.js. Utilizing langchain to create customized multi file interview scenarios and questions based on users' needs.
+Using multi LLMs such as open ai, Gemini and Claude. Helping engineers practice the real interview types + communication similar to their actual real life interviews.
+
 ArmanGPT - AI-Powered Portfolio | Web Application	November 2024 - March 2025
 Built an AI-driven personal portfolio using NextJS, TypeScript, and OpenAI to provide detailed Q&A responses on my professional background, leveraging Neon Postgres and Drizzle ORM for robust data management.
 Implemented user authentication to offer tailored content based on user identity and affiliated company, ensuring a secure, personalized experience.
