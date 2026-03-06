@@ -16,6 +16,7 @@ export const user = pgTable('User', {
   email: varchar('email', { length: 64 }).notNull(),
   password: varchar('password', { length: 64 }),
   magicLink: varchar('magicLink', { length: 64 }),
+  requirements: text('requirements'),
   companyId: uuid('companyId').references(() => company.id),
 });
 

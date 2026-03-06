@@ -9,6 +9,7 @@ import {
   getCompanyLogoUrlbyUserId,
   getProjects,
   getSkills,
+  getUserRequirementsById,
 } from '@/db/queries';
 import { Chat } from '@/db/schema';
 import { DEFAULT_MODEL_NAME, models } from '@/lib/model';
@@ -45,7 +46,12 @@ export default async function Page(props: { params: Promise<any> }) {
     models.find((m) => m.name === value)?.name || DEFAULT_MODEL_NAME;
 
   const url = await getCompanyLogoUrlbyUserId({ id: chat.userId });
-  const [projects, skills] = await Promise.all([getProjects(), getSkills()]);
+  const [projects, skills, requirements] = await Promise.all([
+    getProjects(),
+    getSkills(),
+    getUserRequirementsById({ id: chat.userId }),
+  ]);
+  const hasRequirements = Boolean(requirements && requirements.trim().length > 0);
 
   return (
       <PreviewChat
@@ -55,6 +61,7 @@ export default async function Page(props: { params: Promise<any> }) {
         logoUrl={url?.url || ''}
         projects={projects}
         skills={skills}
+        hasRequirements={hasRequirements}
       />
   );
 }

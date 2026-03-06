@@ -14,11 +14,17 @@ export function ChatHeader({
   displayProjectsButton = true,
   handleDisplayProjects,
   displayProjects = false,
+  onWhyGoodFit,
+  isWhyGoodFitLoading = false,
+  showWhyGoodFitButton = true,
 }: {
   selectedModelName: Model['name'];
   displayProjectsButton?: boolean;
   handleDisplayProjects: () => void;
   displayProjects?: boolean;
+  onWhyGoodFit: () => void;
+  isWhyGoodFitLoading?: boolean;
+  showWhyGoodFitButton?: boolean;
 }) {
   const prevDisplayProjectsButtonRef = useRef(displayProjectsButton);
   const [newBtnBounce, setNewBtnBounce] = useState(false);
@@ -54,6 +60,16 @@ export function ChatHeader({
         selectedModelName={selectedModelName}
         className="order-1 md:order-2"
       />
+      {showWhyGoodFitButton && (
+        <Button
+          variant="outline"
+          className="w-fit md:h-8 order-1 md:order-2"
+          onClick={onWhyGoodFit}
+          disabled={isWhyGoodFitLoading}
+        >
+          {isWhyGoodFitLoading ? 'Thinking...' : 'Why are you a great fit?'}
+        </Button>
+      )}
       {displayProjectsButton && (
         <Button
           variant="ghost"

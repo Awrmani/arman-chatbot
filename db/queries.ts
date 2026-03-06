@@ -22,6 +22,20 @@ export async function getUser(email: string): Promise<Array<User>> {
   }
 }
 
+export async function getUserRequirementsById({ id }: { id: string }) {
+  try {
+    const [selectedUser] = await db
+      .select({ requirements: user.requirements })
+      .from(user)
+      .where(eq(user.id, id));
+
+    return selectedUser?.requirements ?? null;
+  } catch (error) {
+    console.error("Failed to get user requirements from database");
+    throw error;
+  }
+}
+
 export async function getUserByMagicToken(magicLink: string): Promise<Array<User>> {
   try {
     return await db.select().from(user).where(eq(user.magicLink, magicLink));

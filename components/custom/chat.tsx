@@ -4,6 +4,7 @@ import { Attachment, Message } from 'ai';
 import { useChat } from 'ai/react';
 import Image from 'next/image';
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 
 import { ChatHeader } from '@/components/custom/chat-header';
@@ -22,6 +23,7 @@ export function Chat({
   logoUrl,
   projects,
   skills,
+  hasRequirements,
 }: {
   id: string;
   initialMessages: Array<Message>;
@@ -29,21 +31,57 @@ export function Chat({
   logoUrl?: string | null;
   projects?: Project[] | null;
   skills?: SkillItem[] | null;
+  hasRequirements?: boolean;
 }) {
-  const { messages, handleSubmit, input, setInput, append, isLoading, stop } =
-    useChat({
-      body: { id, model: selectedModelName },
-      initialMessages,
-      onFinish: () => {
-        window.history.replaceState({}, '', `/chat/${id}`);
-      },
-    });
+  const {
+    messages,
+    handleSubmit,
+    input,
+    setInput,
+    append,
+    isLoading,
+    stop,
+  } = useChat({
+    body: { id, model: selectedModelName },
+    initialMessages,
+    onFinish: () => {
+      window.history.replaceState({}, '', `/chat/${id}`);
+    },
+  });
 
   const [messagesContainerRef, messagesEndRef] =
     useScrollToBottom<HTMLDivElement>();
 
   const [attachments, setAttachments] = useState<Array<Attachment>>([]);
   const [displayProjects, setDisplayProjects] = useState<boolean>(false);
+  const [isGoodFitLoading, setIsGoodFitLoading] = useState<boolean>(false);
+
+  const handleWhyGoodFit = async () => {
+    if (isLoading || isGoodFitLoading) {
+      return;
+    }
+
+    setDisplayProjects(false);
+    setIsGoodFitLoading(true);
+
+    try {
+      await append(
+        {
+          role: 'user',
+          content: 'Why am i a good fit?',
+        },
+        {
+          body: {
+            goodFit: true,
+          },
+        }
+      );
+    } catch (error) {
+      toast.error('Failed to generate fit analysis, please try again.');
+    } finally {
+      setIsGoodFitLoading(false);
+    }
+  };
 
   return (
     (
@@ -54,6 +92,9 @@ export function Chat({
             selectedModelName={selectedModelName}
             handleDisplayProjects={() => setDisplayProjects(!displayProjects)}
             displayProjects={displayProjects}
+            onWhyGoodFit={handleWhyGoodFit}
+            isWhyGoodFitLoading={isGoodFitLoading}
+            showWhyGoodFitButton={Boolean(hasRequirements)}
           />
           <div
             ref={messagesContainerRef}

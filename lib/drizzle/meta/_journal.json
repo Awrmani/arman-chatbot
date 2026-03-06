@@ -50,6 +50,20 @@
       "when": 1772735920632,
       "tag": "0006_last_microbe",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1772716500000,
+      "tag": "0007_user_requirements",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1772746972023,
+      "tag": "0008_thin_ikaris",
+      "breakpoints": true
     }
   ]
 }

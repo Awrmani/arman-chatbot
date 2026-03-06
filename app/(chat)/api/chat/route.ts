@@ -6,7 +6,12 @@ import { z } from 'zod';
 
 import { customModel } from '@/ai';
 import { auth } from '@/app/(auth)/auth';
-import { deleteChatById, getChatById, saveChat } from '@/db/queries';
+import {
+  deleteChatById,
+  getChatById,
+  getUserRequirementsById,
+  saveChat,
+} from '@/db/queries';
 import { Model, models } from '@/lib/model';
 
 export async function POST(request: Request) {
@@ -14,7 +19,13 @@ export async function POST(request: Request) {
     id,
     messages,
     model,
-  }: { id: string; messages: Array<Message>; model: Model['name'] } =
+    goodFit,
+  }: {
+    id: string;
+    messages: Array<Message>;
+    model: Model['name'];
+    goodFit?: boolean;
+  } =
     await request.json();
 
   const session = await auth();
@@ -27,16 +38,37 @@ export async function POST(request: Request) {
     return new Response('Unauthorized', { status: 401 });
   }
 
+  if (!session.user || !session.user.id) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
   if (!models.find((m) => m.name === model)) {
     return new Response('Model not found', { status: 404 });
   }
 
   const coreMessages = convertToCoreMessages(messages);
+  let modelMessages = coreMessages;
+
+  if (goodFit) {
+    const requirements = await getUserRequirementsById({ id: session.user.id });
+
+    if (!requirements || requirements.trim().length === 0) {
+      return new Response('No requirements saved for this user', { status: 400 });
+    }
+
+    modelMessages = [
+      ...coreMessages,
+      {
+        role: 'user',
+        content: `My role requirements are below. Respond with a structured evaluation where you address each requirement item one-by-one and explain why I am a strong fit based on my portfolio/system context. Keep it concrete and persuasive, and end with a concise overall fit summary.\n\nRequirements:\n${requirements}`,
+      },
+    ];
+  }
 
   const result = await streamText({
     model: customModel(model),
     system: systemPrompt,
-    messages: coreMessages,
+    messages: modelMessages,
     maxSteps: 5,
     tools: {
       getWeather: {
